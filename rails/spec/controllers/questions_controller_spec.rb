@@ -21,4 +21,22 @@ RSpec.describe QuestionsController, :type => :controller do
       expect(assigns(:questions)).to match_array([question1, question2])
     end
   end
+
+  describe "Get #new" do
+    it "responds successfully with an HTTP 200 status code" do
+      get :new
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+    end
+
+    it "renders the new template" do
+      get :new
+      expect(response).to render_template("new")
+    end
+
+    it "creates a Question instance to use in the form" do
+      get :new
+      expect(assigns(:question)).to be_instance_of(Question)
+    end
+  end
 end
