@@ -27,7 +27,8 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    # TODO
+    find_question
+    @correctAnswer = @question.is_correct?(params[:answer][:answer])
   end
 
   private

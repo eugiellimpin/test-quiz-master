@@ -1,0 +1,10 @@
+.container
+  %h1= @question.question
+
+  .well
+    - if @correctAnswer
+      %p Correct!
+      %p= "Answer: #{@question.answer}"
+    - else
+      %p Wrong!
+      %p= "The correct answer is: #{@question.answer}"
