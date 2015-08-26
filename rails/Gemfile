@@ -30,6 +30,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'haml-rails'
 
+gem 'humanize', '~> 1.1.0'
+
 group :development, :test do
   gem 'rspec-rails'
 end

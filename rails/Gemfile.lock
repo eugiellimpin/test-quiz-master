@@ -59,6 +59,7 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    humanize (1.1.0)
     i18n (0.7.0)
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
@@ -152,6 +153,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
   coffee-rails (~> 4.0.0)
   haml-rails
+  humanize (~> 1.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.7)
