@@ -14,4 +14,12 @@ RSpec.feature 'User answers a question', :type => :feature do
     expect(page).to have_content 'Correct!'
     expect(page).to have_content "Answer: #{@question.answer}"
   end
+
+  scenario 'user incorrectly answers the question' do
+    fill_in 'answer_answer', :with => 'Cat'
+    click_button 'Submit answer'
+
+    expect(page).to have_content 'Wrong!'
+    expect(page).to have_content "The correct answer is: #{@question.answer}"
+  end
 end
