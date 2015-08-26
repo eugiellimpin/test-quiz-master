@@ -34,4 +34,5 @@ gem 'humanize', '~> 1.1.0'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara', '~> 2.4.4'
 end
