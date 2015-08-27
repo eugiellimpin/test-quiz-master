@@ -1,12 +1,10 @@
 .container
   %h1 Choose a question!
 
-  .well
-    %ul
-      - @questions.each do |question|
-        %li
-          = link_to truncate(strip_tags(question.question)), question
-          %span.small
-            (#{link_to "edit", edit_question_path(question)})
+  %table.table.table-hover
+    - @questions.each do |question|
+      %tr
+        %td= link_to truncate(strip_tags(question.question)), question
+        %td= link_to "edit", edit_question_path(question)
 
   = link_to "Add a new question", new_question_path
