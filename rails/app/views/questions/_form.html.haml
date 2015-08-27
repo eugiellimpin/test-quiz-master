@@ -5,12 +5,12 @@
       - @question.errors.full_messages.each do |message|
         .message= message
 
-  .form-group
-    = f.label :question
+  .form-group{:class => "#{@question.errors[:question].empty? ? '' : 'has-error'}"}
+    .control-label= f.label :question
     = f.bootsy_area :question, class: 'form-control', rows: 15
 
-  .form-group
-    = f.label :answer
+  .form-group{:class => "#{@question.errors[:answer].empty? ? '' : 'has-error'}"}
+    .control-label= f.label :answer
     = f.text_field :answer, class: 'form-control'
 
   = f.submit nil, class: 'btn btn-primary'
