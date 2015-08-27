@@ -2,7 +2,7 @@
   %h1 Question time...
 
   .well
-    %p= @question.question
+    %p= raw(@question.question)
 
     = form_for :answer, url: answer_question_path(@question) do |f|
       .form-group
