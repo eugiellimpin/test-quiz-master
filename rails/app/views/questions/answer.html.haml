@@ -1,10 +1,17 @@
 .container
-  %h1= @question.question
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title The question was:
+    .panel-body
+      = raw(@question.question)
 
-  .well
-    - if @correctAnswer
-      %p Correct!
-      %p= "Answer: #{@question.answer}"
-    - else
-      %p Wrong!
-      %p= "The correct answer is: #{@question.answer}"
+  - if @correctAnswer
+    .panel.panel-success
+      .panel-heading
+        %h3.panel-title The answer you provided is correct!
+      .panel-body= "Answer: #{@question.answer}"
+  - else
+    .panel.panel-danger
+      .panel-heading
+        %h3.panel-title The answer you provided is wrong.
+      .panel-body= "The correct answer is: #{@question.answer}"

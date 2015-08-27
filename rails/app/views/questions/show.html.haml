@@ -1,11 +1,13 @@
 .container
-  %h1 Question time...
+  .page-header
+    %h1 Question time...
 
-  .well
-    %p= raw(@question.question)
+  .panel.panel-default
+    .panel-body
+      = raw(@question.question)
+    .panel-footer
+      = form_for :answer, url: answer_question_path(@question) do |f|
+        .form-group
+          = f.text_field :answer, class: 'form-control'
 
-    = form_for :answer, url: answer_question_path(@question) do |f|
-      .form-group
-        = f.text_field :answer, class: 'form-control'
-
-      = f.submit "Submit answer", class: 'btn btn-default'
+        = f.submit "Submit answer", class: 'btn btn-default'
